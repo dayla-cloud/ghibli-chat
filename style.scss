@@ -20,7 +20,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: $color-background;
+  background-color: $color-body-background;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -136,6 +136,7 @@ i {
   background-color: $color-background;
   border-radius: 0 0 30px 30px;
   padding: 15px;
+  color: $color-white;
 
   ul {
     width: 100%;
@@ -154,6 +155,15 @@ i {
 
 .profile__img-overlay {
   background-color: $color-background;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    position: absolute;
+    width: 200%;
+    margin-left: -20px;
+  }
 }
 
 .profile__img-overlay-large {
@@ -228,6 +238,12 @@ main[class~="main-profile"] {
     border-radius: 50%;
     background-color: $color-background;
     margin: 80px auto 20px;
+    overflow: hidden;
+
+    img {
+      width: 200%;
+      margin-left: -90px;
+    }
   }
 
   .main-profile__user-info {
@@ -259,6 +275,10 @@ main[class~="main-talk"] {
       @include flex-column-05gap;
       justify-content: center;
       overflow: hidden;
+
+      .talk__text {
+        white-space: nowrap;
+      }
     }
     .talk__alert {
       @include flex-column-05gap;
@@ -337,7 +357,7 @@ main[class~="main-chat-room"] {
           max-width: 200px;
           padding: 15px;
           border-radius: 8px;
-          background-color: $color-background;
+          background-color: $color-body-background;
         }
       }
 
@@ -358,7 +378,8 @@ main[class~="main-chat-room"] {
   height: 70px;
   position: absolute;
   bottom: 0;
-  background-color: $color-background;
+  color: $color-body-background;
+  background-color: $color-body-background;
   border-radius: 0 0 30px 30px;
   padding: 0 15px;
   .chat-room__input {
@@ -371,7 +392,7 @@ main[class~="main-chat-room"] {
     input {
       width: 100%;
       height: 50px;
-      padding: 0 90px 0 10px;
+      padding: 0 90px 0 17px;
       border: 0;
       outline: 0;
 
@@ -389,6 +410,11 @@ main[class~="main-chat-room"] {
     .ri-bear-smile-line {
       right: 50px;
       margin-top: -12px;
+      color: $color-background;
+    }
+
+    .ri-arrow-up-circle-fill {
+      color: $color-background;
     }
     button {
       right: 10px;
@@ -403,7 +429,6 @@ main[class~="main-shopping"] {
   .shopping__list {
     width: 100%;
     height: 230px;
-    background-color: $color-background;
     padding: 10px;
 
     .shopping__list-title {
@@ -423,6 +448,15 @@ main[class~="main-shopping"] {
           width: 140px;
           height: 140px;
           background-color: $color-white;
+
+          overflow: hidden;
+          position: relative;
+          img {
+            width: 200%;
+            position: absolute;
+            margin-left: -50px;
+            margin-top: -2px;
+          }
         }
 
         .shopping__list-products__card-name {
@@ -446,7 +480,6 @@ main[class~="main-more"] {
   .main-more__menu {
     width: 100%;
     height: 100%;
-    background-color: $color-background;
     text-align: center;
 
     i {
