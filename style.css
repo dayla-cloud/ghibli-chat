@@ -1,0 +1,459 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: beige;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: beige;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 200px;
+  gap: 30px;
+  overflow-x: scroll;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+i {
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.header__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.talk__name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chat__text {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.chat__name,
+.chat-room__current-date {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.status,
+.profile__info-sentence,
+.talk__text,
+.talk__alert-title,
+.chat__sent-time,
+.talk__alert-numbers {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.profile__user,
+.profile__friend {
+  display: flex;
+  gap: 15px;
+}
+
+.page {
+  width: 390px;
+  height: 844px;
+  min-width: 390px;
+  min-height: 844px;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 0px 3px 35px rgba(101, 90, 70, 0.3);
+  position: relative;
+}
+
+.status,
+.header,
+.main,
+.chat-room__header {
+  padding: 15px;
+}
+
+.status {
+  width: 100%;
+  height: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+.status .status-wifi {
+  display: flex;
+  gap: 10px;
+  justify-self: flex-start;
+  align-items: center;
+}
+.status .status-current-time {
+  justify-self: center;
+}
+.status .status-battery {
+  display: flex;
+  gap: 10px;
+  justify-self: flex-end;
+  align-items: center;
+}
+
+.header {
+  height: 50px;
+  margin: 15px 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: beige;
+  border-radius: 0 0 30px 30px;
+  padding: 15px;
+}
+.footer ul {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+.footer ul li {
+  justify-self: center;
+}
+
+.profile__img-overlay {
+  background-color: beige;
+}
+
+.profile__img-overlay-large {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 20px;
+}
+
+.profile__img-overlay-medium {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  min-height: 65px;
+  border-radius: 15px;
+}
+
+.profile__img-overlay-small {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 15px;
+}
+
+main[class~=main-friends] .profile__user-info__title,
+main[class~=main-friends] .profile__friends-info__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+main[class~=main-friends] .profile__user .profile__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+main[class~=main-friends] .profile__friends {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+main[class~=main-friends] .profile__friends .profile__friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main[class~=main-friends] .profile__friends .profile__friends-list .profile__friend .profile__friends-info {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main[class~=main-profile] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main[class~=main-profile] .main-profile__header {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+main[class~=main-profile] .main-profile__header__nav__ul {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-self: center;
+}
+main[class~=main-profile] .main-profile__img-overlay {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: beige;
+  margin: 80px auto 20px;
+}
+main[class~=main-profile] .main-profile__user-info {
+  margin: auto;
+  text-align: center;
+}
+main[class~=main-profile] .main-profile__user-info .main-profile__user-info-name {
+  font-size: 26px;
+  font-weight: 400;
+}
+main[class~=main-profile] .main-profile__user-info .main-profile__user-info-text {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+main[class~=main-talk] {
+  display: grid;
+  grid-auto-rows: 90px;
+}
+main[class~=main-talk] .talk-list {
+  height: 70px;
+  display: grid;
+  grid-template-columns: 70px 1fr 50px;
+  align-items: center;
+  gap: 10px;
+}
+main[class~=main-talk] .talk-list .talk__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  overflow: hidden;
+}
+main[class~=main-talk] .talk-list .talk__alert {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+main[class~=main-talk] .talk-list .talk__alert .talk__alert-numbers {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
+}
+
+.chat-room__header {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-room__header .chat-room__header-back {
+  justify-self: flex-start;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.chat-room__header .chat-room__header-name {
+  justify-self: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+.chat-room__header .chat-room__header-menu {
+  justify-self: flex-end;
+}
+.chat-room__header .chat-room__header-menu ul {
+  display: flex;
+  gap: 5px;
+}
+
+main[class~=main-chat-room] {
+  overflow-y: scroll;
+}
+main[class~=main-chat-room] .chat-room__messages {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__current-date {
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(245, 245, 220, 0.5);
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box .chat__img-ovelay {
+  align-self: flex-start;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box .chat__message-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box .chat__message-columns .chat__text {
+  display: block;
+  word-wrap: break-word;
+  width: 100%;
+  max-width: 200px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: beige;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box .chat__message-columns-send {
+  align-items: flex-end;
+}
+main[class~=main-chat-room] .chat-room__messages .chat-room__message-box-send {
+  flex-direction: row-reverse;
+}
+
+.chat-room__texting {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: beige;
+  border-radius: 0 0 30px 30px;
+  padding: 0 15px;
+}
+.chat-room__texting .chat-room__input {
+  width: 100%;
+  height: 100%;
+  margin-right: 5px;
+  position: relative;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.chat-room__texting .chat-room__input input {
+  width: 100%;
+  height: 50px;
+  padding: 0 90px 0 10px;
+  border: 0;
+  outline: 0;
+}
+.chat-room__texting .chat-room__input input:focus {
+  outline: 0;
+  border: 0.5px solid orange;
+}
+.chat-room__texting .chat-room__input button,
+.chat-room__texting .chat-room__input .ri-bear-smile-line {
+  position: absolute;
+  top: 50%;
+}
+.chat-room__texting .chat-room__input .ri-bear-smile-line {
+  right: 50px;
+  margin-top: -12px;
+}
+.chat-room__texting .chat-room__input button {
+  right: 10px;
+  margin-top: -12px;
+  border: 0;
+  background-color: transparent;
+}
+
+main[class~=main-shopping] .shopping__list {
+  width: 100%;
+  height: 230px;
+  background-color: beige;
+  padding: 10px;
+}
+main[class~=main-shopping] .shopping__list .shopping__list-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+main[class~=main-shopping] .shopping__list .shopping__list-products {
+  overflow-x: scroll;
+  display: flex;
+  gap: 15px;
+}
+main[class~=main-shopping] .shopping__list .shopping__list-products .shopping__list-products__card {
+  width: 140px;
+  height: 170;
+}
+main[class~=main-shopping] .shopping__list .shopping__list-products .shopping__list-products__card .shopping__list-products__card-overlay {
+  width: 140px;
+  height: 140px;
+  background-color: white;
+}
+main[class~=main-shopping] .shopping__list .shopping__list-products .shopping__list-products__card .shopping__list-products__card-name {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  padding: 5px 0;
+  word-wrap: break-word;
+}
+
+main[class~=main-more] {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  grid-auto-rows: 80px;
+  gap: 5px;
+}
+main[class~=main-more] .main-more__menu {
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+  text-align: center;
+}
+main[class~=main-more] .main-more__menu i {
+  font-size: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */

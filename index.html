@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <title>Ghibri Chat</title>
+  </head>
+  <body>
+    <div class="page friends">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <div class="header">
+        <h3 class="header__title">Friends</h3>
+        <nav class="header__nav">
+          <ul class="header__nav__ul">
+            <li><i class="ri-search-line"></i></li>
+            <li><i class="ri-user-add-line"></i></li>
+            <li><i class="ri-music-2-line"></i></li>
+            <li><i class="ri-settings-5-line"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main main-friends">
+        <div class="profile__user">
+          <div class="profile__img-overlay profile__img-overlay-medium"></div>
+          <div class="profile__user-info">
+            <h4 class="profile__user-info__title">name</h4>
+            <span class="profile__info-sentence">text</span>
+          </div>
+        </div>
+        <div class="profile__friends" id="friends">
+          <p class="profile__friends-title">Friends</p>
+          <div class="profile__friends-list">
+            <div class="profile__friend">
+              <div
+                class="profile__img-overlay profile__img-overlay-small"
+              ></div>
+              <div class="profile__friends-info">
+                <h4 class="profile__friends-info__title">name</h4>
+                <span class="profile__info-sentence">text</span>
+              </div>
+            </div>
+            <div class="profile__friend">
+              <div
+                class="profile__img-overlay profile__img-overlay-small"
+              ></div>
+              <div class="profile__friends-info">
+                <h4 class="profile__friends-info__title">name</h4>
+                <span class="profile__info-sentencet">text</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <nav class="footer">
+        <ul class="footer__ul">
+          <li>
+            <i class="ri-user-heart-line"></i>
+          </li>
+          <li>
+            <i class="ri-chat-3-line"></i>
+          </li>
+          <li><i class="ri-shopping-basket-line"></i></li>
+          <li><i class="ri-more-line"></i></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="page profile" id="profile">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <main class="main main-profile">
+        <div class="main-profile__header">
+          <i class="ri-close-line"></i>
+          <nav class="main-profile__header__nav">
+            <ul class="main-profile__header__nav__ul">
+              <li><i class="ri-gift-line"></i></li>
+              <li><i class="ri-settings-5-line"></i></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="main-profile__img-overlay">
+          <img src="" alt="" />
+        </div>
+        <div class="main-profile__user-info">
+          <p class="main-profile__user-info-name">name</p>
+          <p class="main-profile__user-info-text">text</p>
+        </div>
+      </main>
+      <nav class="footer">
+        <ul class="footer__ul">
+          <li><i class="ri-user-heart-line"></i></li>
+          <li><i class="ri-chat-3-line"></i></li>
+          <li><i class="ri-shopping-basket-line"></i></li>
+          <li><i class="ri-more-line"></i></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="page talk">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <div class="header">
+        <h3 class="header__title">Talk</h3>
+        <nav class="header__nav">
+          <ul class="header__nav__ul">
+            <li><i class="ri-search-line"></i></li>
+            <li><i class="ri-user-add-line"></i></li>
+            <li><i class="ri-music-2-line"></i></li>
+            <li><i class="ri-settings-5-line"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main main-talk">
+        <div class="talk-list">
+          <div class="profile__img-overlay-medium profile__img-overlay"></div>
+          <div class="talk__info">
+            <p class="talk__name">name</p>
+            <p class="talk__text">text</p>
+          </div>
+
+          <div class="talk__alert">
+            <p class="talk__alert-title">00:00</p>
+            <div class="talk__alert-numbers">1</div>
+          </div>
+        </div>
+      </main>
+      <nav class="footer">
+        <ul class="footer__ul">
+          <li><i class="ri-user-heart-line"></i></li>
+          <li><i class="ri-chat-3-line"></i></li>
+          <li><i class="ri-shopping-basket-line"></i></li>
+          <li><i class="ri-more-line"></i></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="page chat-room">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <div class="chat-room__header">
+        <div class="chat-room__header-back">
+          <i class="ri-arrow-left-s-line"></i>
+          <span class="chat-room__header__back">1</span>
+        </div>
+        <p class="chat-room__header-name">name</p>
+        <nav class="chat-room__header-menu">
+          <ul>
+            <i class="ri-search-line"></i>
+            <li><i class="ri-music-2-line"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main main-chat-room">
+        <div class="chat-room__messages">
+          <p class="chat-room__current-date">30/01/2022</p>
+          <div class="chat-room__message-box chat-room__message-box-receive">
+            <div
+              class="
+                profile__img-overlay profile__img-overlay-small
+                chat__img-ovelay
+              "
+            ></div>
+            <div class="chat__message-columns chat__message-columns-receive">
+              <h4 class="chat__name">name</h4>
+              <span class="chat__text"
+                >messagesdfgfsadgsdfghdfghgfgdfssdfgfsgfsgsadfghd</span
+              >
+            </div>
+            <p class="chat__sent-time">00:00</p>
+          </div>
+          <div class="chat-room__message-box chat-room__message-box-send">
+            <div class="chat__message-columns chat__message-columns-send">
+              <h4 class="chat__name">name</h4>
+              <span class="chat__text chat__message-columns-send">message</span>
+            </div>
+            <p class="chat__sent-time">00:00</p>
+          </div>
+        </div>
+      </main>
+      <div class="chat-room__texting">
+        <i class="ri-add-circle-line"></i>
+        <div class="chat-room__input">
+          <input type="text" name="" id="" placeholder="text here" />
+          <i class="ri-bear-smile-line"></i>
+          <button class="icon-send">
+            <i class="ri-arrow-up-circle-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="page shopping">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <div class="header">
+        <h3 class="header__title">Shopping</h3>
+        <nav class="header__nav">
+          <ul class="header__nav__ul">
+            <i class="ri-barcode-box-line"></i>
+            <li><i class="ri-music-2-line"></i></li>
+            <li><i class="ri-settings-5-line"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main main-shopping">
+        <div class="shopping__list">
+          <h4 class="shopping__list-title">Title</h4>
+          <div class="shopping__list-products">
+            <div class="shopping__list-products__card">
+              <div class="shopping__list-products__card-overlay"></div>
+              <h4 class="shopping__list-products__card-name">Name</h4>
+            </div>
+            <div class="shopping__list-products__card">
+              <div class="shopping__list-products__card-overlay"></div>
+              <h4 class="shopping__list-products__card-name">Name</h4>
+            </div>
+            <div class="shopping__list-products__card">
+              <div class="shopping__list-products__card-overlay"></div>
+              <h4 class="shopping__list-products__card-name">Name</h4>
+            </div>
+            <div class="shopping__list-products__card">
+              <div class="shopping__list-products__card-overlay"></div>
+              <h4 class="shopping__list-products__card-name">Name</h4>
+            </div>
+          </div>
+        </div>
+      </main>
+      <nav class="footer">
+        <ul class="footer__ul">
+          <li><i class="ri-user-heart-line"></i></li>
+          <li><i class="ri-chat-3-line"></i></li>
+          <li><i class="ri-shopping-basket-line"></i></li>
+          <li><i class="ri-more-line"></i></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="page more">
+      <div class="status">
+        <div class="status-wifi">
+          <i class="ri-wifi-line"></i>
+          <p>Wifi</p>
+        </div>
+        <p class="status-current-time">00:00</p>
+        <div class="status-battery">
+          <p>20%</p>
+          <i class="ri-battery-low-line"></i>
+        </div>
+      </div>
+      <div class="header">
+        <h3 class="header__title">More</h3>
+        <nav class="header__nav">
+          <ul class="header__nav__ul">
+            <i class="ri-search-line"></i>
+            <i class="ri-barcode-box-line"></i>
+            <li><i class="ri-music-2-line"></i></li>
+            <li><i class="ri-settings-5-line"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main main-more">
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+        <div class="main-more__menu">
+          <i class="ri-mail-line"></i>
+          <p class="main-more__menu-title">mail</p>
+        </div>
+      </main>
+      <nav class="footer">
+        <ul class="footer__ul">
+          <li>
+            <i class="ri-user-heart-line"></i>
+          </li>
+          <li><i class="ri-chat-3-line"></i></li>
+          <li><i class="ri-shopping-basket-line"></i></li>
+          <li><i class="ri-more-line"></i></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

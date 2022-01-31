@@ -1,0 +1,456 @@
+@import "_variable";
+@import "_mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: $color-background;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-background;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 200px;
+  gap: 30px;
+  overflow-x: scroll;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+i {
+  @include bigger-font;
+  cursor: pointer;
+}
+
+.header__title {
+  @include bigger-bold-font;
+}
+
+.talk__name {
+  @include regular-bold-font;
+}
+
+.chat__text {
+  @include regular-font;
+}
+
+.chat__name,
+.chat-room__current-date {
+  @include small-font;
+}
+
+.status,
+.profile__info-sentence,
+.talk__text,
+.talk__alert-title,
+.chat__sent-time,
+.talk__alert-numbers {
+  @include smallest-font;
+}
+
+.profile__user,
+.profile__friend {
+  @include flex-row-15gap();
+}
+
+.page {
+  width: 390px;
+  height: 844px;
+  min-width: 390px;
+  min-height: 844px;
+  border-radius: 30px;
+  background-color: $color-white;
+  box-shadow: 0px 3px 35px $color-boxshadow;
+  position: relative;
+}
+.status,
+.header,
+.main,
+.chat-room__header {
+  padding: 15px;
+}
+
+.status {
+  width: 100%;
+  height: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  .status-wifi {
+    @include flex-row-10gap();
+    justify-self: flex-start;
+    align-items: center;
+  }
+  .status-current-time {
+    justify-self: center;
+  }
+  .status-battery {
+    @include flex-row-10gap();
+    justify-self: flex-end;
+    align-items: center;
+  }
+}
+
+.header {
+  height: 50px;
+  margin: 15px 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: $color-background;
+  border-radius: 0 0 30px 30px;
+  padding: 15px;
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
+    li {
+      justify-self: center;
+    }
+  }
+}
+
+// main / friends
+
+.profile__img-overlay {
+  background-color: $color-background;
+}
+
+.profile__img-overlay-large {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 20px;
+}
+
+.profile__img-overlay-medium {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  min-height: 65px;
+  border-radius: 15px;
+}
+
+.profile__img-overlay-small {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 15px;
+}
+
+main[class~="main-friends"] {
+  .profile__user-info__title,
+  .profile__friends-info__title {
+    @include regular-bold-font;
+  }
+
+  .profile__user .profile__user-info {
+    @include flex-column-05gap;
+    justify-content: center;
+  }
+
+  .profile__friends {
+    @include flex-column-15gap;
+    margin: 30px 0;
+
+    .profile__friends-list {
+      @include flex-column-10gap;
+
+      .profile__friend .profile__friends-info {
+        @include flex-row-05gap;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+main[class~="main-profile"] {
+  @include flex-column-10gap;
+
+  .main-profile__header {
+    @include flex-row-05gap;
+    justify-content: space-between;
+    padding-top: 15px;
+  }
+  .main-profile__header__nav__ul {
+    @include flex-row-10gap;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  .main-profile__img-overlay {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $color-background;
+    margin: 80px auto 20px;
+  }
+
+  .main-profile__user-info {
+    margin: auto;
+    text-align: center;
+
+    .main-profile__user-info-name {
+      @include bigger-font;
+    }
+    .main-profile__user-info-text {
+      @include regular-font;
+      max-width: 300px;
+      word-wrap: break-word;
+    }
+  }
+}
+
+main[class~="main-talk"] {
+  display: grid;
+  grid-auto-rows: 90px;
+  .talk-list {
+    height: 70px;
+    display: grid;
+    grid-template-columns: 70px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+
+    .talk__info {
+      @include flex-column-05gap;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .talk__alert {
+      @include flex-column-05gap;
+      text-align: center;
+
+      .talk__alert-numbers {
+        align-self: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: white;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.chat-room__header {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+
+  .chat-room__header-back {
+    justify-self: flex-start;
+    @include flex-row-05gap;
+    align-items: center;
+  }
+
+  .chat-room__header-name {
+    justify-self: center;
+    @include regular-font;
+  }
+
+  .chat-room__header-menu {
+    justify-self: flex-end;
+    ul {
+      @include flex-row-05gap;
+    }
+  }
+}
+
+main[class~="main-chat-room"] {
+  overflow-y: scroll;
+  .chat-room__messages {
+    @include flex-column-05gap;
+
+    .chat-room__current-date {
+      padding: 5px 15px;
+      border-radius: 5px;
+      margin: auto;
+      text-align: center;
+      background-color: rgba($color-background, 0.5);
+    }
+    .chat-room__message-box {
+      @include flex-row-05gap;
+      align-items: flex-end;
+      margin-bottom: 15px;
+
+      .chat__img-ovelay {
+        align-self: flex-start;
+      }
+
+      .chat__message-columns {
+        @include flex-column-05gap;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .chat__text {
+          display: block;
+          word-wrap: break-word;
+          width: 100%;
+          max-width: 200px;
+          padding: 15px;
+          border-radius: 8px;
+          background-color: $color-background;
+        }
+      }
+
+      .chat__message-columns-send {
+        align-items: flex-end;
+      }
+    }
+    .chat-room__message-box-send {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.chat-room__texting {
+  @include flex-row-15gap;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: $color-background;
+  border-radius: 0 0 30px 30px;
+  padding: 0 15px;
+  .chat-room__input {
+    width: 100%;
+    height: 100%;
+    margin-right: 5px;
+    position: relative;
+    @include flex-row-05gap;
+    align-items: center;
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 0 90px 0 10px;
+      border: 0;
+      outline: 0;
+
+      &:focus {
+        outline: 0;
+        border: 0.5px solid orange;
+      }
+    }
+    button,
+    .ri-bear-smile-line {
+      position: absolute;
+      top: 50%;
+    }
+
+    .ri-bear-smile-line {
+      right: 50px;
+      margin-top: -12px;
+    }
+    button {
+      right: 10px;
+      margin-top: -12px;
+      border: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+main[class~="main-shopping"] {
+  .shopping__list {
+    width: 100%;
+    height: 230px;
+    background-color: $color-background;
+    padding: 10px;
+
+    .shopping__list-title {
+      @include regular-bold-font;
+      margin-bottom: 15px;
+    }
+
+    .shopping__list-products {
+      overflow-x: scroll;
+      @include flex-row-15gap;
+
+      .shopping__list-products__card {
+        width: 140px;
+        height: 170;
+
+        .shopping__list-products__card-overlay {
+          width: 140px;
+          height: 140px;
+          background-color: $color-white;
+        }
+
+        .shopping__list-products__card-name {
+          @include regular-font;
+          text-align: center;
+          padding: 5px 0;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+main[class~="main-more"] {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  grid-auto-rows: 80px;
+  gap: 5px;
+
+  .main-more__menu {
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+    text-align: center;
+
+    i {
+      @include biggest-font;
+    }
+  }
+}
